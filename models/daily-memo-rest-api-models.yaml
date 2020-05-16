@@ -1,0 +1,71 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Common Model Define"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+paths: {}
+definitions:
+  ResponseBase:
+    description: API Response Base Model
+    type: object
+    properties:
+      code:
+        description: Error Code
+        type: integer
+        default: 200
+        example: 200
+      message:
+        description: error Message
+        type: string
+        example: ""
+      version:
+        description: version Info
+        type: object
+        properties:
+          api:
+            description: API version
+            type: string
+            example: 1.0.0
+  Email:
+    description: |
+      Email Address
+      - validation for email pattern
+      - maxLength: 32
+    type: string
+    maxLength: 32
+    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    example: test@gmail.com
+  Password:
+    description: |
+      User Password
+      - Must be a combination of alphabetic, numeric, and special symbols
+      - minLength: 6
+      - maxLength: 16
+      - Require encryption when sent to server
+    type: string
+    format: password
+    example: reareartt34325
+  Login:
+    description: Login Request Model
+    required: [email, password]
+    type: object
+    properties:
+      email:
+        $ref: "#/definitions/Email"
+      password:
+        $ref: "#/definitions/Password"
+  Token:
+    description: Auth Token
+    type: object
+    properties:
+      token:
+        type: string
+        description: 로그인 토큰
+        example: tB1qUf0+p2zgqhstLtr7F8LwdmRfaXOstXQr7BA7rpY=
+      expireAt:
+        type: string
+        description: UTC기준 토큰 만료시간
+        format: date-time
+        example: 2020-03-27T17:32:28Z
+    

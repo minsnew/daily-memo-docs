@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Common Responses Define"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+paths: {}
+responses:
+  ResLoginSuccess:
+    description: 로그인 성공
+    schema:
+      allOf:
+      - $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+      - type: object
+        properties:
+          body:
+            $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/Token"
+  ResLoginFail:
+    description: 로그인 실패
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+        - type: object
+          example:
+            $ref: "../daily-memo-rest-api-error-codes.json#/LOGIN_FAIL"
+

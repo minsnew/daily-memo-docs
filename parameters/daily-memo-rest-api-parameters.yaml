@@ -1,0 +1,15 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Common Parameters Define"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+paths: {}
+parameters:
+  Login:
+    in: body
+    name: Login
+    required: true
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/Login"

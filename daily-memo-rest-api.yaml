@@ -1,0 +1,52 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Docs"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+host: "locahost:3625"
+basePath: "/api/v1.0"
+securityDefinitions:
+  ApiKey:
+    type: apiKey
+    in: header
+    name: x-api-key
+  TokenKey:
+    type: apiKey
+    in: header
+    name: x-api-token
+tags:
+  - name: "Login"
+    description: "로그인"
+  - name: "User"
+    description: "사용자 관리"
+  - name: "Memo"
+    description: "Memo 관리"
+  - name: "Group"
+    description: "Memo Group 관리"
+  - name: "Tag"
+    description: "Tag 관리"
+schemes:
+  - "https"
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+paths:
+  /login:
+    post:
+      tags: [Login]
+      summary: "User Athentication"
+      description: "사용자 인증"
+      security:
+        - ApiKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-parameters.yaml#/parameters/Login"
+      responses: 
+        default:
+          $ref: "./responses/daily-memo-rest-api-responses.yaml#/responses/ResLoginSuccess"
+        LOGIN_FAIL: 
+          $ref: "./responses/daily-memo-rest-api-responses.yam#/responses/ResLoginFail"
+
+    

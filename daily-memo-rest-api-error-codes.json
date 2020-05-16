@@ -1,0 +1,57 @@
+{
+    "400": {
+        "code": 400,
+        "description": "잘못된 요청",
+        "message": "잘못된 요청입니다."
+    },
+    "401": {
+        "code": 401,
+        "description": "인증되지 않은 요청",
+        "message": "잘못된 요청입니다."
+      },
+      "402": {
+        "code": 402,
+        "description": "결제가 필요함",
+        "message": "잘못된 요청입니다."
+      },
+      "403": {
+        "code": 403,
+        "description": "권한없음",
+        "message": "잘못된 요청입니다."
+      },
+      "404": {
+        "code": 404,
+        "description": "리소스를 찾을수 없음",
+        "message": "잘못된 요청입니다."
+      },
+      "405": {
+        "code": 405,
+        "description": "사용할수 없는 요청",
+        "message": "잘못된 요청입니다."
+      },
+      "406": {
+        "code": 406,
+        "description": "컨텐츠를 찾지 않음",
+        "message": "잘못된 요청입니다."
+      },
+      "407": {
+        "code": 407,
+        "description": "프록시 인증 필요",
+        "message": "잘못된 요청입니다."
+      },
+      "408": {
+        "code": 408,
+        "description": "타임아웃",
+        "message": "잘못된 요청입니다."
+      },
+      "409": {
+        "code": 409,
+        "description": "충돌",
+        "message": "잘못된 요청입니다."
+      },
+      "LOGIN_FAIL": {
+        "code": 11000,
+        "description": "로그인 실패",
+        "message": "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다."
+      }
+}
