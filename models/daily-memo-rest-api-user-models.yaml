@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Common Model Define"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+paths: {}
+definitions:
+  Email:
+    description: |
+      Email Address
+      - validation for email pattern
+      - minLength: 6
+      - maxLength: 32
+    type: string
+    minLength: 6
+    maxLength: 32
+    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    example: test@gmail.com
+  Username:
+    description: |
+      User Name (email과 동일하게 로그인 ID로 사용 가능. 추후 지원)
+      - minLength: 6
+      - maxLength: 32
+    type: string
+    minLength: 6
+    maxLength: 32
+    pattern: /[a-z0-9]./
+  DisplayName:
+    description: |
+      화면 표시 이름
+      - minLength: 2
+      - maxLength: 16
+    type: string
+    minLength: 2
+    maxLength: 16
+  Password:
+    description: |
+      User Password
+      - Must be a combination of alphabetic, numeric, and special symbols
+      - minLength: 6
+      - maxLength: 16
+      - Require encryption when sent to server
+    type: string
+    format: password
+    example: reareartt34325
+  UserLevel:  
+    description: |
+      사용자 관리를 위한 User Level
+      - 사용자 권한에 따른 기능/화면 고민 필요 
+      - 우선 관리자 / 일반 사용자로 구분
+    type: string
+  BaseUser:
+    description: |
+      User Base Model
+    type: object
+    properties:
+      email:
+        $ref: "#/definitions/Email"
+      username:
+        $ref: "#/definitions/Username"
+      displayName:
+        $ref: "#/definitions/DisplayName"
+      userLevel:
+        $ref: "#/definitions/UserLevel"
+  CreateUser:
+    description: |
+      Create User Model
+    type: object
+    properties:
+      email:
+        $ref: "#/definitions/Email"
+      username:
+        $ref: "#/definitions/Username"
+      displayName:
+        $ref: "#/definitions/DisplayName"
+      password:
+        $ref: "#/definitions/Password"
+      userLevel:
+        $ref: "#/definitions/UserLevel"
+

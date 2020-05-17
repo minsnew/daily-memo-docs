@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API User Responses Define"
+  description: |
+    20200516 - First Initialize
+  version: "1.0.0"
+paths: {}
+responses:
+  ResGetUserList:
+    description: 사용자 리스트 조회 응답
+    schema:
+      allOf:
+      - $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+      - type: object
+        properties:
+            body:
+              type: object
+              properties:
+                contents:
+                  type: array
+                  items:
+                    $ref: "../models/daily-memo-rest-api-user-models.yaml#/definitions/BaseUser"
+  ResCreateUser:
+    description: 사용자 정보 생성 응답
+    schema:
+      $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"

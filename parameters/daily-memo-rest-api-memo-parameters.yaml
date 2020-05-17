@@ -1,0 +1,15 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Memo Parameters Define"
+  description: |
+    20200517 - First Initialize
+  version: "1.0.0"
+paths: {}
+parameters:
+  ParamGetMemoList:
+    in: body
+    name: GetMemoList
+    required: true
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-memo-models.yaml#/definitions/ParamGetMemoList"

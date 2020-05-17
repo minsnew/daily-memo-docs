@@ -1,0 +1,15 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Common Parameters Define"
+  description: |
+    20200514 - First Initialize
+  version: "1.0.0"
+paths: {}
+parameters:
+  ParamCreateUser:
+    in: body
+    name: CreateUser
+    required: true
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-user-models.yaml#/definitions/CreateUser"

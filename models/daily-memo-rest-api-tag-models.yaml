@@ -1,0 +1,19 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Tag Model Define"
+  description: |
+    20200517 - First Initialize
+  version: "1.0.0"
+paths: {}
+definitions:
+  BaseTag:
+    description: |
+      Base Tag Model
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      color:
+        type: string

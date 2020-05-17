@@ -46,7 +46,41 @@ paths:
       responses: 
         default:
           $ref: "./responses/daily-memo-rest-api-responses.yaml#/responses/ResLoginSuccess"
-        LOGIN_FAIL: 
-          $ref: "./responses/daily-memo-rest-api-responses.yam#/responses/ResLoginFail"
+  /user:
+    get:
+      tags: [User]
+      summary: "Get User List"
+      description: "사용자 리스트 조회"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      responses:
+        default:
+          $ref: "./responses/daily-memo-rest-api-user-responses.yaml#/responses/ResGetUserList"
+    post:
+      tags: [User]
+      summary: "Create User Info"
+      description: "사용자 정보 생성"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-user-parameters.yaml#/parameters/ParamCreateUser"
+      responses:
+        default:
+          $ref: "./responses/daily-memo-rest-api-user-responses.yaml#/responses/ResCreateUser"    
+  /memo:
+    get:
+      tags: [Memo]
+      summary: "Get Memo List"
+      description: "메모 리스트 조회"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-memo-parameters.yaml#/parameters/ParamGetMemoList"
+      responses:
+        default:
+          $ref: "./responses/daily-memo-rest-api-memo-responses.yaml#/responses/ResGetMemoList"  
 
     

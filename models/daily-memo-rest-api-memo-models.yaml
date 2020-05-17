@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  title: "Daily Memo API Memo Model Define"
+  description: |
+    20200517 - First Initialize
+  version: "1.0.0"
+paths: {}
+definitions:
+  MemoTitle:
+    type: string
+    description: Memo 제목
+  MemoContent:
+    type: string
+    description: Memo 본문
+  MemoFromAt:
+    type: string
+    description: Memo 시작 날짜
+  MemoToAt:
+    type: string
+    description: Memo 종료 날짜
+  
+  BaseMemo:
+    description: |
+      Memo Base Model
+    type: object
+    properties:
+      title:
+        $ref: "#/definitions/MemoTitle"
+      content:
+        $ref: "#/definitions/MemoContent"
+      fromAt:
+        $ref: "#/definitions/MemoFromAt"
+      toAt:
+        $ref: "#/definitions/MemoToAt"
+      groupKeys:
+        type: array
+        items: 
+          type: string
+          description: Memo가 적용되는 Group 목록, Key로 관리
+      tagKeys:
+        type: array
+        items:
+          type: array
+          items:
+            type: string
+            description: Memo에 적용된 Tag 목록, Key로 관리
+      userEmail:
+        $ref: "./daily-memo-rest-api-user-models.yaml#/definitions/Email"
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt: 
+        type: string
+        format: date-time
+  ParamGetMemoList:
+    description: |
+      Get Memo List Parameter Model
+    type: object
+    properties:
+      userEmail:
+        $ref: "./daily-memo-rest-api-user-models.yaml#/definitions/Email"
+      fromAt:
+        type: string
+        format: date-time
+      toAt:
+        type: string
+        format: date-time
+      group:
+        type: array
+        items: 
+          type: string
+          description: Group으로 검색 시, 사용

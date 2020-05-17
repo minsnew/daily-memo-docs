@@ -27,34 +27,15 @@ definitions:
             description: API version
             type: string
             example: 1.0.0
-  Email:
-    description: |
-      Email Address
-      - validation for email pattern
-      - maxLength: 32
-    type: string
-    maxLength: 32
-    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    example: test@gmail.com
-  Password:
-    description: |
-      User Password
-      - Must be a combination of alphabetic, numeric, and special symbols
-      - minLength: 6
-      - maxLength: 16
-      - Require encryption when sent to server
-    type: string
-    format: password
-    example: reareartt34325
   Login:
     description: Login Request Model
     required: [email, password]
     type: object
     properties:
       email:
-        $ref: "#/definitions/Email"
+        $ref: "./daily-memo-rest-api-user-models.yaml#/definitions/Email"
       password:
-        $ref: "#/definitions/Password"
+        $ref: "./daily-memo-rest-api-user-models.yaml#/definitions/Password"
   Token:
     description: Auth Token
     type: object
