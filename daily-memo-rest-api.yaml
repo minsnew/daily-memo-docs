@@ -82,5 +82,39 @@ paths:
       responses:
         default:
           $ref: "./responses/daily-memo-rest-api-memo-responses.yaml#/responses/ResGetMemoList"  
-
-    
+    post:
+      tags: [Memo]
+      summary: "Create Memo"
+      description: "신규 메모 생성"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-memo-parameters.yaml#/parameters/ParamCreateMemo"
+      responses:
+        default:
+          $ref: "./responses/daily-memo-rest-api-memo-responses.yaml#/responses/ResCreateMemo"
+    patch:
+      tags: [Memo]
+      summary: "Patch Memo"
+      description: "메모 업데이트"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-memo-parameters.yaml#/parameters/ParamPatchMemo"
+      responses:
+        default: 
+          $ref: "./responses/daily-memo-rest-api-memo-responses.yaml#/responses/ResPatchMemo"
+    delete:
+      tags: [Memo]
+      summary: "Delete Memo"
+      description: "메모 삭제"
+      security:
+        - ApiKey: []
+        - TokenKey: []
+      parameters:
+        - $ref: "./parameters/daily-memo-rest-api-memo-parameters.yaml#/parameters/ParamDeleteMemo"
+      responses:
+        default:
+          $ref: "./responses/daily-memo-rest-api-memo-responses.yaml#/responses/ResDeleteMemo"

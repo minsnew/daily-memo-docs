@@ -20,3 +20,17 @@ responses:
                   type: array
                   items:
                     $ref: "../models/daily-memo-rest-api-memo-models.yaml#/definitions/BaseMemo"
+  ResCreateMemo:
+    description: Memo 생성 응답
+    schema:
+      $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+  ResPatchMemo:
+    description: Memo 업데이트 응답
+    schema:
+      $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+  ResDeleteMemo:
+    description: Memo 삭제 응답
+    schema:
+      $ref: "../models/daily-memo-rest-api-models.yaml#/definitions/ResponseBase"
+  
+          

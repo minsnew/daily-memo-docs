@@ -13,3 +13,22 @@ parameters:
     schema:
       allOf:
         - $ref: "../models/daily-memo-rest-api-memo-models.yaml#/definitions/ParamGetMemoList"
+  ParamCreateMemo:
+    in: body
+    name: CreateMemo
+    required: true
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-memo-models.yaml#/definitions/ParamCreateMemo"
+  ParamPatchMemo:
+    in: body
+    name: PatchMemo
+    required: true
+    schema:
+      allOf:
+        - $ref: "../models/daily-memo-rest-api-memo-models.yaml#/definitions/ParamPatchMemo"
+  ParamDeleteMemo:
+    in: path
+    name: id
+    required: true
+    type: integer
